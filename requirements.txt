@@ -1,0 +1,11 @@
+boto3
+botocore
+numpy>=1.25.*
+pandas>=2.0.*
+requests>=2.31.*
+PyYAML
+pytest
+coverage
+pytest-cov
+pylint
+flake8
