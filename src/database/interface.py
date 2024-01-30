@@ -10,24 +10,25 @@ class Interface:
     The interface to database actions
     """
 
-    def __init__(self) -> None:
+    def __init__(self, parameters: dict) -> None:
         """
         The constructor
+
+        :param parameters: A dictionary of parameters
         """
+
+        self.__parameters = parameters
 
         self.__algorithm = src.database.algorithm.Algorithm()
 
-    def exc(self, parameters: dict) -> bool:
+    def exc(self) -> bool:
         """
         Executes database actions ...
-
-        
-        :param parameters: A dictionary of parameters
 
         :return: bool
         """
 
-        match parameters['action']:
+        match self.__parameters['action']:
             case 'delete':
                 return self.__algorithm.delete_database(name=parameters['database_name'])
             case _:
