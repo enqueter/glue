@@ -71,18 +71,17 @@ class Algorithm:
         except botocore.exceptions.ClientError as err:
             raise err
 
-    def delete_crawler(self, name: str):
+    def delete_crawler(self):
         """
 
-        :param name:
         :return:
         """
 
         try:
-            self.__glue_client.delete_crawler(Name=name)
+            self.__glue_client.delete_crawler(Name=self.__parameters['crawler_name'])
             return True
         except self.__glue_client.exceptions.EntityNotFoundException:
-            logging.log(level=logging.INFO, msg=f'A glue crawler named {name} does not exist.')
+            logging.log(level=logging.INFO, msg=f'A glue crawler named {self.__parameters['crawler_name']} does not exist.')
             return True
         except self.__glue_client.exceptions.CrawlerRunningException:
             logging.log(level=logging.INFO, msg='The glue crawler is running ...')
