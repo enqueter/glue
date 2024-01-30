@@ -13,7 +13,7 @@ def main():
 
     # Parameters
     logger = logging.getLogger(__name__)
-    logger.info(parameters)
+    logger.info(msg=parameters)
 
     # Service
     match parameters['service']:
