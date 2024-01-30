@@ -7,16 +7,15 @@ import botocore.exceptions
 
 class Secret:
     """
-
     Description
     -----------
     This class retrieves the ...
+
 
     References
     ----------
 
     * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
-    * https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html#API_GetSecretValue_ResponseSyntax
 
     """
 
@@ -31,9 +30,13 @@ class Secret:
 
     def __get__value(self, secret_id: str) -> str:
         """
+        The reader of a secret key's value.
 
 
         :param secret_id: The identification code of the secret
+
+        Returns:
+            _type_: str
         """
 
         try:
