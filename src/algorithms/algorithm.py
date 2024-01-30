@@ -1,5 +1,5 @@
 """
-Module database.py
+Module algorithm.py
 """
 
 import logging
@@ -10,9 +10,9 @@ import botocore.client
 import botocore.exceptions
 
 
-class Database:
+class Algorithm:
     """
-    Class Database
+    Class Algorithm
 
     In progress ...
         https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glue#code-examples
