@@ -1,13 +1,13 @@
 """
 Module interface.py
 """
-import logging
 
 import src.database.algorithm
 
 
 class Interface:
-    """_summary_
+    """
+    The interface to database actions
     """
 
     def __init__(self) -> None:
@@ -21,17 +21,14 @@ class Interface:
         """
         Executes database actions ...
 
-        Args:
+        
         :param parameters: A dictionary of parameters
 
-        Returns:
-            _type_: bool
+        :return: bool
         """
 
-        match parameters['objective']:
+        match parameters['action']:
             case 'delete':
                 return self.__algorithm.delete_database(name=parameters['database_name'])
             case _:
-                logging.log(level= logging.INFO,
-                            msg=f'{parameters['objective']} is not a database action option')
-                return False
+                raise f'{parameters['action']} is not a database action option'
