@@ -32,9 +32,12 @@ class Algorithm:
         # Glue Client & Amazon Resource Name (ARN)
         self.__secret = src.functions.secret.Secret()
         self.__glue_client: botocore.client.BaseClient = boto3.client(service_name='glue')
-        self.__glue_arn: str = f'arn:aws:iam::{self.__secret.exc(secret_id='AccountIdentifier')}:role/{self.__secret.exc(secret_id='GlueServiceRole')}'
 
-    def create_crawler(self):
+        account_id: str = self.__secret.exc(secret_id='AccountIdentifier')
+        glue_service_role: str = self.__secret.exc(secret_id='GlueServiceRole')
+        self.__glue_arn: str = f'arn:aws:iam::{account_id}:role/{glue_service_role}'
+
+    def create(self):
         """
 
         :return:
@@ -58,7 +61,7 @@ class Algorithm:
         except botocore.exceptions.ClientError as err:
             raise err
 
-    def start_crawler(self):
+    def start(self):
         """
 
         :return:
@@ -72,7 +75,7 @@ class Algorithm:
         except botocore.exceptions.ClientError as err:
             raise err
 
-    def delete_crawler(self):
+    def delete(self):
         """
 
         :return:
