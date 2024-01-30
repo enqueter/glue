@@ -15,6 +15,7 @@ def main():
     logger = logging.getLogger(__name__)
     logger.info(parameters)
 
+    # Service
     match parameters['service']:
         case 'crawler':
             src.crawler.interface.Interface().exc(parameters=parameters)
