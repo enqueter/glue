@@ -1,10 +1,10 @@
 """ 
 The secret ...
 """
+import json
+
 import boto3
 import botocore.exceptions
-
-import json
 
 
 class Secret:
