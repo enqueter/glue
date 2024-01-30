@@ -1,7 +1,6 @@
 """
 Module interface.py
 """
-import logging
 
 import src.crawler.algorithm
 
@@ -24,7 +23,7 @@ class Interface:
         :param parameters: The dictionary of parameters
         """
 
-        match parameters['objective']:
+        match parameters['action']:
             case 'delete':
                 self.__algorithm.delete_crawler()
             case 'create':
@@ -32,6 +31,4 @@ class Interface:
             case 'start':
                 self.__algorithm.start_crawler()
             case _:
-                logging.log(level= logging.INFO,
-                            msg=f'{parameters['objective']} is not a database action option')
-                return False
+                raise f'{parameters['action']} is not a crawler action option'
