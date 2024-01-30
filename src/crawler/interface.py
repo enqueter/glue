@@ -19,6 +19,7 @@ class Interface:
 
         self.__parameters: dict = parameters
 
+        # Crawler actions instance
         self.__algorithm = src.crawler.algorithm.Algorithm(parameters=self.__parameters)
 
     def exc(self):
