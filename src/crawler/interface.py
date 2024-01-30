@@ -8,6 +8,7 @@ import src.crawler.algorithm
 class Interface:
     """
     The interface to the crawler actions
+
     """
 
     def __init__(self) -> None:
@@ -25,10 +26,10 @@ class Interface:
 
         match parameters['action']:
             case 'delete':
-                self.__algorithm.delete_crawler()
+                self.__algorithm.delete()
             case 'create':
-                self.__algorithm.create_crawler()
+                self.__algorithm.create()
             case 'start':
-                self.__algorithm.start_crawler()
+                self.__algorithm.start()
             case _:
                 raise f'{parameters['action']} is not a crawler action option'
