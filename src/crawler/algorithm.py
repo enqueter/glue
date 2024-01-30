@@ -4,7 +4,6 @@ Module algorithm.py
 import logging
 
 import boto3
-
 import botocore.client
 import botocore.exceptions
 
@@ -86,9 +85,12 @@ class Algorithm:
         try:
             self.__glue_client.delete_crawler(Name=self.__parameters['crawler_name'])
             logging.log(level=logging.INFO, msg='Deleting crawler ...')
+
         except self.__glue_client.exceptions.EntityNotFoundException:
             logging.log(level=logging.INFO, msg=f'A glue crawler named {self.__parameters['crawler_name']} does not exist.')
+
         except self.__glue_client.exceptions.CrawlerRunningException:
             logging.log(level=logging.WARNING, msg='The glue crawler is running, no action taken ...')
+
         except botocore.exceptions.ClientError as err:
             raise err
