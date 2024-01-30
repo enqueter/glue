@@ -8,23 +8,26 @@ import src.crawler.algorithm
 class Interface:
     """
     The interface to the crawler actions
-
     """
 
-    def __init__(self) -> None:
+    def __init__(self, parameters: dict) -> None:
         """
         The constructor
-        """
-
-        self.__algorithm = src.crawler.algorithm.Algorithm()
-
-    def exc(self, parameters: dict):
-        """
 
         :param parameters: The dictionary of parameters
         """
 
-        match parameters['action']:
+        self.__parameters: dict = parameters
+
+        self.__algorithm = src.crawler.algorithm.Algorithm(parameters=self.__parameters)
+
+    def exc(self, ):
+        """
+
+        :return:
+        """
+
+        match self.__parameters['action']:
             case 'delete':
                 self.__algorithm.delete()
             case 'create':
@@ -32,4 +35,4 @@ class Interface:
             case 'start':
                 self.__algorithm.start()
             case _:
-                raise f'{parameters['action']} is not a crawler action option'
+                raise f'{self.__parameters['action']} is not a crawler action option'
