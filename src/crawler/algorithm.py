@@ -32,7 +32,8 @@ class Algorithm:
 
         # Glue Client & Amazon Resource Name (ARN)
         self.__secret = src.functions.secret.Secret()
-        self.__glue_client: botocore.client.BaseClient = boto3.client(service_name='glue')
+        session = boto3.session.Session()
+        self.__glue_client: botocore.client.BaseClient = session.client(service_name='glue')
 
         account_id: str = self.__secret.exc(secret_id='AccountIdentifier')
         glue_service_role: str = self.__secret.exc(secret_id='GlueServiceRole')
