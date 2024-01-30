@@ -27,6 +27,35 @@ docker ps --all
 ```
 
 <br>
+
+## Parameters
+
+### Example: CRAWLER
+
+```yaml
+parameters:
+  'service': 'crawler'
+  'objective': 'create'
+  'crawler_name': 'pollutants'
+  'crawler_description': 'The database for environmental analytics data.'
+  'database_name': 'particulates'
+  'table_prefix': 'pol_'
+  'schedule': "cron(0 1 ? * SAT#2 *)"
+```
+
+
+### Example: DATABASE
+
+```yaml
+parameters:
+  'service': 'database'
+  'objective': 'delete'
+  'database_name': 'particulates'
+```
+
+
+
+<br>
 <br>
 
 <br>
