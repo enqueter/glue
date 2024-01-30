@@ -28,9 +28,33 @@ docker ps --all
 
 <br>
 
-## Parameters
+## Settings & Parameters
 
-### Example: CRAWLER
+For Glue services.
+
+
+### Settings
+
+For the Glue Amazon Resource Name
+
+> arn:aws:iam::{account_id}:role/{glue_service_role}
+
+developers must set the Secrets:
+
+| key<br>Secret name | value |
+| :--- | :--- |
+| GlueServiceRole | glue_service_role |
+| AccountIdentifier | account_id |
+
+The class [secret](./src/functions/secret.py) retrieves a secret value, via its key, from Amazon Secrets.
+
+<br>
+
+### Parameters
+
+At present, the parameters for a Glue service request are set via a parameters.yaml file within the project's root directory.
+
+#### Example: CRAWLER
 
 ```yaml
 parameters:
@@ -43,8 +67,7 @@ parameters:
   'schedule': "cron(0 1 ? * SAT#2 *)"
 ```
 
-
-### Example: DATABASE
+#### Example: DATABASE
 
 ```yaml
 parameters:
