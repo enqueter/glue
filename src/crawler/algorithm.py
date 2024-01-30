@@ -41,7 +41,7 @@ class Algorithm:
         """
 
         try:
-            return self.__glue_client.create_crawler(
+            self.__glue_client.create_crawler(
                 Name=self.__parameters['crawler_name'],
                 Role=self.__glue_arn,
                 DatabaseName=self.__parameters['database_name'],
@@ -54,6 +54,7 @@ class Algorithm:
                 TablePrefix=self.__parameters['table_prefix'],
                 Schedule=self.__parameters['schedule']
             )
+            return True
         except botocore.exceptions.ClientError as err:
             raise err
 
