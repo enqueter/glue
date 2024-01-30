@@ -24,7 +24,6 @@ def main():
         case _:
             logger.info('%s is not a service option', parameters['service'])
 
-
     # Delete __pycache__
     src.functions.cache.Cache().delete()
 
