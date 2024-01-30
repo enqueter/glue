@@ -6,8 +6,6 @@
 
 ## Remote & Local Environments
 
-<br>
-
 ### Remote
 
 Development within a container.  The environment's image is built via
@@ -31,10 +29,6 @@ docker ps --all
 <br>
 
 ## Settings & Parameters
-
-For Glue services.
-
-<br>
 
 ### Settings
 
