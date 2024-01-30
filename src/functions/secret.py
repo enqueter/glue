@@ -4,6 +4,8 @@ The secret ...
 import boto3
 import botocore.exceptions
 
+import json
+
 
 class Secret:
     """
@@ -57,4 +59,7 @@ class Secret:
             _type_: str
         """
 
-        return self.__get__value(secret_id=secret_id)
+        expression = self.__get__value(secret_id=secret_id)
+        dictionary: dict = json.loads(expression)
+
+        return dictionary[secret_id]
