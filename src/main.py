@@ -15,6 +15,15 @@ def main():
     logger = logging.getLogger(__name__)
     logger.info(parameters)
 
+    match parameters['service']:
+        case 'crawler':
+            src.crawler.interface.Interface().exc(parameters=parameters)
+        case 'database':
+            src.database.interface.Interface().exc(parameters=parameters)
+        case _:
+            logger.info('%s is not a service option', parameters['service'])
+
+
     # Delete __pycache__
     src.functions.cache.Cache().delete()
 
@@ -33,6 +42,8 @@ if __name__ == '__main__':
     # Classes
     import src.functions.cache
     import src.functions.serial
+    import src.crawler.interface
+    import src.database.interface
 
     # The parameters
     uri = os.path.join(root, 'parameters.yaml')
