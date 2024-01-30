@@ -31,6 +31,6 @@ class Interface:
 
         match self.__parameters['action']:
             case 'delete':
-                return self.__algorithm.delete()
+                self.__algorithm.delete()
             case _:
                 raise f'{self.__parameters['action']} is not a database action option'
