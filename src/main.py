@@ -18,11 +18,11 @@ def main():
     # Service
     match parameters['service']:
         case 'crawler':
-            src.crawler.interface.Interface().exc(parameters=parameters)
+            src.crawler.interface.Interface(parameters=parameters).exc()
         case 'database':
-            src.database.interface.Interface().exc(parameters=parameters)
+            src.database.interface.Interface(parameters=parameters).exc()
         case _:
-            logger.info('%s is not a service option', parameters['service'])
+            raise f"{parameters['service']} is not a service option"
 
     # Delete __pycache__
     src.functions.cache.Cache().delete()
@@ -40,10 +40,10 @@ if __name__ == '__main__':
                         datefmt='%Y-%m-%d %H:%M:%S')
 
     # Classes
-    import src.functions.cache
-    import src.functions.serial
     import src.crawler.interface
     import src.database.interface
+    import src.functions.cache
+    import src.functions.serial
 
     # The parameters
     uri = os.path.join(root, 'parameters.yaml')
