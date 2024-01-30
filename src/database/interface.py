@@ -19,6 +19,7 @@ class Interface:
 
         self.__parameters = parameters
 
+        # Database actions instance
         self.__algorithm = src.database.algorithm.Algorithm(parameters=self.__parameters)
 
     def exc(self) -> bool:
@@ -30,6 +31,6 @@ class Interface:
 
         match self.__parameters['action']:
             case 'delete':
-                return self.__algorithm.delete_database()
+                return self.__algorithm.delete()
             case _:
                 raise f'{self.__parameters['action']} is not a database action option'
