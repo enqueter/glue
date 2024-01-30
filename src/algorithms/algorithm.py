@@ -1,5 +1,5 @@
 """
-Module crawler.py
+Module algorithm.py
 """
 import logging
 
@@ -11,9 +11,9 @@ import src.functions.secret
 import src.functions.serial
 
 
-class Crawler:
+class Algorithm:
     """
-    Class Crawler
+    Class Algorithm
 
     In progress ...
         https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue/client/create_crawler.html#
