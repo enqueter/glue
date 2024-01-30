@@ -30,7 +30,7 @@ class Algorithm:
         # Glue Client
         self.__glue_client = boto3.client(service_name='glue')
 
-    def delete_database(self) -> bool:
+    def delete(self) -> bool:
         """
         https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue/client/delete_database.html
 
