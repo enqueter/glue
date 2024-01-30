@@ -21,7 +21,7 @@ class Interface:
 
         self.__algorithm = src.crawler.algorithm.Algorithm(parameters=self.__parameters)
 
-    def exc(self, ):
+    def exc(self):
         """
 
         :return:
