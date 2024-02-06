@@ -4,6 +4,17 @@
 
 <br>
 
+## Upcoming
+
+* A production mode Dockerfile
+* The actions script, i.e., the continuous integration, delivery, and deployment script, which automatically conducts
+  * Code analysis.
+  * Amazon Container Registry image registration. 
+* Edits of the succeeding sections.
+
+<br>
+
+
 ## Remote & Local Environments
 
 ### Remote
@@ -72,8 +83,6 @@ parameters:
   'objective': 'delete'
   'database_name': 'particulates'
 ```
-
-
 
 <br>
 <br>
