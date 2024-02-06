@@ -7,9 +7,10 @@
 ## Upcoming
 
 * A production mode Dockerfile
-* The actions script, i.e., the continuous integration, delivery, and deployment script, which automatically conducts
+* The GitHub Actions script, i.e., the continuous integration, delivery, and deployment script, which automatically conducts
   * Code analysis.
   * Amazon Container Registry image registration. 
+* GitHub Actions status badges.
 * Edits of the succeeding sections.
 
 <br>
