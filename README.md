@@ -4,6 +4,18 @@
 
 <br>
 
+## Upcoming
+
+* A production mode Dockerfile
+* The GitHub Actions script, i.e., the continuous integration, delivery, and deployment script, which automatically conducts
+  * Code analysis.
+  * Amazon Container Registry image registration. 
+* GitHub Actions status badges.
+* Edits of the succeeding sections.
+
+<br>
+
+
 ## Remote & Local Environments
 
 ### Remote
@@ -72,8 +84,6 @@ parameters:
   'objective': 'delete'
   'database_name': 'particulates'
 ```
-
-
 
 <br>
 <br>
