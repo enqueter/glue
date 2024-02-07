@@ -4,6 +4,16 @@
 
 <br>
 
+## Purpose
+
+For programmatically launching Amazon Glue services.  At present
+
+* Crawlers: create, start/launch, delete
+* Crawler Databases: delete
+
+<br>
+
+
 ## Upcoming
 
 * A production mode Dockerfile
@@ -14,7 +24,6 @@
 * Edits of the succeeding sections.
 
 <br>
-
 
 ## Remote & Local Environments
 
