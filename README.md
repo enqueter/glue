@@ -4,9 +4,11 @@
 
 <br>
 
-[](#purpose)
-[](#upcoming)
-
+* [Purpose](#purpose)
+* [Upcoming](#upcoming)
+* [Usage Notes](#usage-notes)
+* [Remote Development Environment](#remote-development-environment)
+* [Amazon Cloud Settings](#amazon-cloud-settings)
 
 <br>
 
@@ -79,11 +81,9 @@ parameters:
 
 <br>
 
-## Remote & Local Environments
+## Remote Development Environment
 
-### Remote
-
-Development within a container.  The environment's image is built via
+For remote, i.e., container, development the python environment's image is built via
 
 ```shell
 docker build . --file .devcontainer/Dockerfile --tag glue
@@ -103,9 +103,7 @@ docker ps --all
 
 <br>
 
-## Settings & Parameters
-
-### Settings
+## Amazon Cloud Settings
 
 For the Glue Amazon Resource Name
 
