@@ -68,9 +68,28 @@ The class [secret](./src/functions/secret.py) retrieves a secret value, via its 
 
 <br>
 
-### Parameters
+### Usage Notes
 
-At present, the parameters for a Glue service request are set via a parameters.yaml file within the project's root directory.
+Amazon Glue service requests are made via the main program
+
+> src/main.py
+
+<br>
+
+At present, this program expects a `parameters.yaml` file within the project's root directory.  Within `parameters.yaml` users define parameter values in relation to a service of interest.  The parameters are 
+
+<br>
+
+|Parameter|Notes|Data Type|
+|:---|:---|:---|
+|service|crawler or database|string|
+|objective|create or delete|string|
+|crawler_name|What is the name of<br>the crawler being created<br>or deleted?|string|
+|crawler_description|Briefly descripe the data<br>being crawled.|string|
+|database_name|What is the name of the database<br>wherein the crawl results should be<br> stored?  If it does not exist, it will be<br>created.|string|
+|table_prefix|What prefix should the tables of<br>this crawler have?|string|
+|schedule|The crawler's schedule defined via<br>a cron string.  Exclude if a schedule<br>is not required.|string|
+
 
 #### Example: CRAWLER
 
@@ -79,7 +98,7 @@ parameters:
   'service': 'crawler'
   'objective': 'create'
   'crawler_name': 'pollutants'
-  'crawler_description': 'The database for environmental analytics data.'
+  'crawler_description': 'This crawler crawls the Amazon S3 pollutants data.'
   'database_name': 'particulates'
   'table_prefix': 'pol_'
   'schedule': "cron(0 1 ? * SAT#2 *)"
