@@ -4,6 +4,12 @@
 
 <br>
 
+[](#purpose)
+[](#upcoming)
+
+
+<br>
+
 ## Purpose
 
 For programmatically launching Amazon Glue services.  At present
@@ -25,7 +31,7 @@ For programmatically launching Amazon Glue services.  At present
 
 <br>
 
-### Usage Notes
+## Usage Notes
 
 Amazon Glue service requests are made via the main program
 
@@ -47,8 +53,9 @@ At present, this program expects a `parameters.yaml` file within the project's r
 |table_prefix|What prefix should the tables of<br>this crawler have?|string|
 |schedule|The crawler's schedule defined via<br>a cron string.  Exclude if a schedule<br>is not required.|string|
 
+<br>
 
-#### Example: CRAWLER
+**A create crawler example**
 
 ```yaml
 parameters:
@@ -61,7 +68,7 @@ parameters:
   'schedule': "cron(0 1 ? * SAT#2 *)"
 ```
 
-#### Example: DATABASE
+**A delete database example**
 
 ```yaml
 parameters:
