@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     # The parameters
     uri = os.path.join(root, 'parameters.yaml')
-    dictionary = src.functions.serial.Serial().get_dictionary(uri=uri)
+    dictionary = src.functions.serial.Serial().read(uri=uri)
     parameters: dict = dictionary['parameters']
 
     main()
