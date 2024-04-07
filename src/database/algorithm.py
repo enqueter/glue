@@ -5,27 +5,28 @@ Module algorithm.py
 import logging
 
 import boto3
-
 import botocore.client
 import botocore.exceptions
+
+import src.elements.glue_paramaters as gpr
 
 
 class Algorithm:
     """
     Class Algorithm
 
-    In progress ...
+    In progress …
         https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glue#code-examples
     """
 
-    def __init__(self, parameters: dict):
+    def __init__(self, parameters: gpr.GlueParameters):
         """
         The constructor
 
         :param parameters: A dictionary of parameters
         """
 
-        self.__parameters: dict = parameters
+        self.__parameters = parameters
 
         # Glue Client
         self.__glue_client = boto3.client(service_name='glue')
@@ -38,10 +39,10 @@ class Algorithm:
         """
 
         try:
-            self.__glue_client.delete_database(Name=self.__parameters['database_name'])
-            logging.log(level=logging.INFO, msg=f'Database {self.__parameters['database_name']} has been deleted.')
+            self.__glue_client.delete_database(Name=self.__parameters.database_name)
+            logging.log(level=logging.INFO, msg=f'Database {self.__parameters.database_name} has been deleted.')
         except self.__glue_client.exceptions.EntityNotFoundException:
-            logging.log(level=logging.INFO, msg=f'Database {self.__parameters['database_name']} does not exist.')
+            logging.log(level=logging.INFO, msg=f'Database {self.__parameters.database_name} does not exist.')
         except self.__glue_client.exceptions.OperationTimeoutException:
             logging.log(level=logging.WARNING, msg='Time out.')
         except botocore.exceptions.ClientError as err:
