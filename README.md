@@ -40,13 +40,15 @@ Execution is via
 
 > src/main.py parameters.yml
 
+<br>
+
 Wherein `parameters.yaml` encodes the expected service parameters:
 
 <table style="width: 80%; border: 0; border-spacing: 5px; margin-left: 35px">
   <colgroup>
       <col span="1" style="width: 23.5%;">
-      <col span="1" style="width: 66.5%;">
-      <col span="1" style="width: 8.5%;">
+      <col span="1" style="width: 43.5%;">
+      <col span="1" style="width: 13.0%;">
   </colgroup>
   <thead><tr style="text-align: left"><th>parameter</th><th>notes</th><th>data type</th></tr></thead>
   <tr>
@@ -76,6 +78,7 @@ Wherein `parameters.yaml` encodes the expected service parameters:
     <td>string</td></tr>
 </table>
 
+<br>
 
 <details><summary><b>Example:</b><i>create crawler</i></summary>
 
