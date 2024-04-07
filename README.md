@@ -44,7 +44,7 @@ Execution is via
 
 Wherein `parameters.yaml` encodes the expected service parameters:
 
-<table style="width: 80%; border: 0; border-spacing: 5px; margin-left: 35px">
+<table style="width: 65%; border: 0; border-spacing: 5px; margin-left: 35px">
   <colgroup>
       <col span="1" style="width: 23.5%;">
       <col span="1" style="width: 43.5%;">
