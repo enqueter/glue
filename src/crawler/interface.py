@@ -4,20 +4,22 @@ Module interface.py
 
 import src.crawler.algorithm
 
+import src.elements.glue_paramaters as gpr
+
 
 class Interface:
     """
-    The interface to the crawler actions
+    Crawler actions interface.
     """
 
-    def __init__(self, parameters: dict) -> None:
+    def __init__(self, parameters: gpr.GlueParameters) -> None:
         """
         The constructor
 
         :param parameters: The dictionary of parameters
         """
 
-        self.__parameters: dict = parameters
+        self.__parameters = parameters
 
         # Crawler actions instance
         self.__algorithm = src.crawler.algorithm.Algorithm(parameters=self.__parameters)
@@ -28,7 +30,7 @@ class Interface:
         :return:
         """
 
-        match self.__parameters['action']:
+        match self.__parameters.objective:
             case 'delete':
                 self.__algorithm.delete()
             case 'create':
@@ -36,4 +38,4 @@ class Interface:
             case 'start':
                 self.__algorithm.start()
             case _:
-                raise f'{self.__parameters['action']} is not a crawler action option'
+                raise f'{self.__parameters.objective} is not a crawler action objective'

@@ -8,7 +8,9 @@ import botocore.client
 import botocore.exceptions
 
 import src.functions.secret
-import src.functions.serial
+
+
+import src.elements.glue_paramaters as gpr
 
 
 class Algorithm:
@@ -21,10 +23,10 @@ class Algorithm:
         https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glue#code-examples
     """
 
-    def __init__(self, parameters: dict):
+    def __init__(self, parameters: gpr.GlueParameters):
         """
 
-        :param parameters: A collection ...
+        :param parameters: A collection …
         """
 
         self.__parameters = parameters
@@ -46,17 +48,17 @@ class Algorithm:
 
         try:
             self.__glue_client.create_crawler(
-                Name=self.__parameters['crawler_name'],
+                Name=self.__parameters.crawler_name,
                 Role=self.__glue_arn,
-                DatabaseName=self.__parameters['database_name'],
-                Description=self.__parameters['crawler_description'],
+                DatabaseName=self.__parameters.database_name,
+                Description=self.__parameters.crawler_description,
                 Targets={'S3Targets': [
                     {
-                        'Path': f's3://{self.__parameters['s3_bucket_name']}'
+                        'Path': f's3://{self.__parameters.s3_bucket_name}'
                     },
                 ]},
-                TablePrefix=self.__parameters['table_prefix'],
-                Schedule=self.__parameters['schedule']
+                TablePrefix=self.__parameters.table_prefix,
+                Schedule=self.__parameters.schedule
             )
             logging.log(level=logging.INFO, msg='Creating crawler ...')
         except botocore.exceptions.ClientError as err:
@@ -69,7 +71,7 @@ class Algorithm:
         """
 
         try:
-            self.__glue_client.start_crawler(Name=self.__parameters['crawler_name'])
+            self.__glue_client.start_crawler(Name=self.__parameters.crawler_name)
             logging.log(level=logging.INFO, msg='The glue crawler is now running ...')
         except self.__glue_client.exceptions.CrawlerRunningException:
             logging.log(level=logging.INFO, msg='The glue crawler is already running ...')
@@ -83,11 +85,11 @@ class Algorithm:
         """
 
         try:
-            self.__glue_client.delete_crawler(Name=self.__parameters['crawler_name'])
+            self.__glue_client.delete_crawler(Name=self.__parameters.crawler_name)
             logging.log(level=logging.INFO, msg='Deleting crawler ...')
 
         except self.__glue_client.exceptions.EntityNotFoundException:
-            logging.log(level=logging.INFO, msg=f'A glue crawler named {self.__parameters['crawler_name']} does not exist.')
+            logging.log(level=logging.INFO, msg=f'A glue crawler named {self.__parameters.crawler_name} does not exist.')
 
         except self.__glue_client.exceptions.CrawlerRunningException:
             logging.log(level=logging.WARNING, msg='The glue crawler is running, no action taken ...')

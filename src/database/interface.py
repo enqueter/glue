@@ -4,13 +4,15 @@ Module interface.py
 
 import src.database.algorithm
 
+import src.elements.glue_paramaters as gpr
+
 
 class Interface:
     """
-    The interface to database actions
+     Database actions interface.
     """
 
-    def __init__(self, parameters: dict) -> None:
+    def __init__(self, parameters: gpr.GlueParameters) -> None:
         """
         The constructor
 
@@ -22,15 +24,15 @@ class Interface:
         # Database actions instance
         self.__algorithm = src.database.algorithm.Algorithm(parameters=self.__parameters)
 
-    def exc(self) -> bool:
+    def exc(self) -> None:
         """
         Executes database actions ...
 
         :return: bool
         """
 
-        match self.__parameters['action']:
+        match self.__parameters.objective:
             case 'delete':
                 self.__algorithm.delete()
             case _:
-                raise f'{self.__parameters['action']} is not a database action option'
+                raise f'{self.__parameters.objective} is not a database action objective'
