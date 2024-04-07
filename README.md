@@ -45,15 +45,15 @@ At present, this program expects a `parameters.yaml` file within the project's r
 
 <br>
 
-|Parameter|Notes|Data Type|
-|:---|:---|:---|
-|service|crawler or database|string|
-|objective|create or delete|string|
-|crawler_name|What is the name of<br>the crawler being created<br>or deleted?|string|
-|crawler_description|Briefly descripe the data<br>being crawled.|string|
-|database_name|What is the name of the database<br>wherein the crawl results should be<br> stored?  If it does not exist, it will be<br>created.|string|
-|table_prefix|What prefix should the tables of<br>this crawler have?|string|
-|schedule|The crawler's schedule defined via<br>a cron string.  Exclude if a schedule<br>is not required.|string|
+| Parameter           | Notes                                                                                                                             | Data Type |
+|:--------------------|:----------------------------------------------------------------------------------------------------------------------------------|:----------|
+| service             | crawler or database                                                                                                               | string    |
+| objective           | create or delete                                                                                                                  | string    |
+| crawler_name        | What is the name of<br>the crawler being created<br>or deleted?                                                                   | string    |
+| crawler_description | Briefly describe the data<br>being crawled.                                                                                       | string    |
+| database_name       | What is the name of the database<br>wherein the crawl results should be<br> stored?  If it does not exist, it will be<br>created. | string    |
+| table_prefix        | What prefix should the tables of<br>this crawler have?                                                                            | string    |
+| schedule            | The crawler's schedule defined via<br>a cron string.  Exclude if a schedule<br>is not required.                                   | string    |
 
 <br>
 
