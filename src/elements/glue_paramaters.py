@@ -27,14 +27,14 @@ class GlueParameters(typing.NamedTuple):
       * The name of the S3 bucket the new crawler will target.
 
     database_name
-      * What is the name of the database<br>wherein the crawl results should be<br> stored?  If
-        it does not exist, it will be<br>created.
+      * The name of the database for crawler results.  If
+        it does not exist, it will be created.
 
     table_prefix
-      * What prefix should the tables of<br>this crawler have?
+      * What prefix should the tables of this crawler have?
 
     schedule
-      * The crawler's schedule defined via<br>a cron string.  Exclude if a schedule<br>is
+      * The crawler's schedule defined via a cron string.  Exclude if a schedule is
         not required.
 
     """
