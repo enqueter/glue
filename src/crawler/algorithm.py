@@ -7,7 +7,7 @@ import boto3
 import botocore.client
 import botocore.exceptions
 
-import src.elements.glue_paramaters as gpr
+import src.elements.gp as gp
 import src.functions.secret
 
 
@@ -21,7 +21,7 @@ class Algorithm:
         https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/glue#code-examples
     """
 
-    def __init__(self, parameters: gpr.GlueParameters):
+    def __init__(self, parameters: gp.GP):
         """
 
         :param parameters: A collection …
