@@ -1,8 +1,9 @@
 """
 Module select.py
 """
-import src.crawler.interface
-import src.database.interface
+
+import src.crawler.algorithm
+import src.database.algorithm
 
 import src.elements.gp as gp
 
@@ -29,8 +30,8 @@ class Select:
 
         match parameters.service:
             case 'crawler':
-                src.crawler.interface.Interface(parameters=parameters).exc()
+                src.crawler.algorithm.Algorithm(parameters=parameters).exc()
             case 'database':
-                src.database.interface.Interface(parameters=parameters).exc()
+                src.database.algorithm.Algorithm(parameters=parameters).exc()
             case _:
                 raise f"{parameters.service} is not a service option"
