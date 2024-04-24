@@ -4,9 +4,9 @@ This is data type S3Parameters
 import typing
 
 
-class GlueParameters(typing.NamedTuple):
+class GP(typing.NamedTuple):
     """
-    The data type class ⇾ GlueParameters
+    The data type class ⇾ GP (glue parameters)
 
     Attributes
     ----------
