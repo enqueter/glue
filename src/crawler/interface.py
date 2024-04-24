@@ -4,7 +4,7 @@ Module interface.py
 
 import src.crawler.algorithm
 
-import src.elements.glue_paramaters as gpr
+import src.elements.gp as gp
 
 
 class Interface:
@@ -12,7 +12,7 @@ class Interface:
     Crawler actions interface.
     """
 
-    def __init__(self, parameters: gpr.GlueParameters) -> None:
+    def __init__(self, parameters: gp.GP) -> None:
         """
         The constructor
 
