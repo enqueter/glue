@@ -94,3 +94,15 @@ class Algorithm:
 
         except botocore.exceptions.ClientError as err:
             raise err
+
+    def exc(self):
+
+        match self.__parameters.objective:
+            case 'delete':
+                self.delete()
+            case 'create':
+                self.create()
+            case 'start':
+                self.start()
+            case _:
+                raise f'{self.__parameters.objective} is not a crawler action objective'
