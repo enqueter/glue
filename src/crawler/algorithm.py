@@ -7,10 +7,8 @@ import boto3
 import botocore.client
 import botocore.exceptions
 
-import src.functions.secret
-
-
 import src.elements.glue_paramaters as gpr
+import src.functions.secret
 
 
 class Algorithm:
