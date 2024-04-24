@@ -19,7 +19,7 @@ def main():
     node: dict = dictionary['parameters']
     logger.info(node)
 
-    parameters = src.elements.glue_paramaters.GlueParameters(**node)
+    parameters = src.elements.gp.GP(**node)
     src.select.Select().exc(parameters=parameters)
 
     # Delete __pycache__
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     import src.functions.cache
     import src.functions.serial
     import src.functions.arguments
-    import src.elements.glue_paramaters
+    import src.elements.gp
     import src.select
 
     # The parameters
