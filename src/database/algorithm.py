@@ -47,3 +47,12 @@ class Algorithm:
             logging.log(level=logging.WARNING, msg='Time out.')
         except botocore.exceptions.ClientError as err:
             raise err
+
+    def exc(self):
+
+        match self.__parameters.objective:
+            case 'delete':
+                self.delete()
+            case _:
+                raise f'{self.__parameters.objective} is not a database action objective'
+
