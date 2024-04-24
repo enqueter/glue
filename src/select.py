@@ -4,7 +4,7 @@ Module select.py
 import src.crawler.interface
 import src.database.interface
 
-import src.elements.glue_paramaters as gpr
+import src.elements.gp as gp
 
 
 class Select:
@@ -18,7 +18,7 @@ class Select:
         """
 
     @staticmethod
-    def exc(parameters: gpr.GlueParameters):
+    def exc(parameters: gp.GP):
         """
 
         :param parameters:
